@@ -17,7 +17,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "qhy6rhpc",
+        projectId: "n36rdlzw",
         dataset: "production",
         token:"sk1a6MCUStSr9unzWECGNAaLqK84etorTHQQPbblSIXwK0cHgpBaJXEofM0elSY02gfJWGx83uuzWauNH",
         graphqlTag: "default",

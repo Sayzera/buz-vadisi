@@ -11,6 +11,8 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Counter from "yet-another-react-lightbox/plugins/counter";
+import {PortableText} from '@portabletext/react'
+
 
 import "yet-another-react-lightbox/plugins/counter.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -70,6 +72,8 @@ export default function ProductDetail({ pageContext }: Props) {
   >();
   const { productData, pagePath } = pageContext;
 
+  console.log(productData.overview);
+
   React.useEffect(() => {
     const images = productData.images.map((image) => {
       return {
@@ -79,6 +83,43 @@ export default function ProductDetail({ pageContext }: Props) {
     setProductImages(images);
   }, [productData]);
 
+  const serializers = {
+    types: {
+      block(props) {
+        switch (props.node.style) {
+          case "h1":
+            return <h1 className="text-center">{props.children}</h1>
+          case "h2":
+            return <h2 className="text-center">{props.children}</h2>
+          case "h3":
+            return <h3 className="text-center">{props.children}</h3>
+          case "h4":
+            return <h4 className="text-center">{props.children}</h4>
+          case "blockquote":
+            return <blockquote>{props.children}</blockquote>
+          default:
+            return <p className="inspirationText">{props.children}</p>
+        }
+      },
+    },
+    marks: {
+      internalLink: ({ mark, children }) => {
+        const { slug = {} } = mark
+        const href = `/${slug.current}`
+        return <Link to={href}>{children}</Link>
+      },
+      externalLink: ({ mark, children }) => {
+        const { blank, href } = mark
+        return blank ? (
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
+        )
+      },
+    },
+  }
   return (
     <div>
       <Lightbox
@@ -124,12 +165,7 @@ export default function ProductDetail({ pageContext }: Props) {
             </div>
             <div>
               <div className="flex space-x-2 px-6">
-                <img
-                  src={pallet1}
-                  onClick={() => setOpenLightbox(true)}
-                  alt="image"
-                  className="h-16 w-16 border border-gray cursor-pointer transition ease-in-out delay-150 hover:scale-125"
-                />
+              
                 {productData.images.map((image, index) => (
                   <div
                     key={index}
@@ -166,14 +202,18 @@ export default function ProductDetail({ pageContext }: Props) {
                 </div>
 
                 <div>
-                  <p className="mt-4 text-sm leading-6 text-secondary">
-                    {productData.overview?.[0].children[0].text}
-                  </p>
+                  <InteractiveList properties={productData.ozellikler} />
                 </div>
 
                 <div>
-                  <InteractiveList properties={productData.ozellikler} />
+                  <p className="mt-4 text-sm leading-6 text-secondary">
+                     <PortableText 
+                     value={productData.overview}
+                    />
+                  </p>
                 </div>
+
+             
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import aboutVideoImage from "@/assets/background/y1.jpg";
 import { Button, IconButton } from "@mui/material";
 import { PlayIcon } from "lucide-react";
 import ReactPlayer from "react-player";
+import video from "@/assets/background/video.mp4";
 
 type Props = {data: {
   title: string;
@@ -104,7 +105,7 @@ export default function AboutVideo({data}: Props) {
               <ReactPlayer
                 style={{ position: "absolute", top: 0, left: 0 }}
                 url={
-                  "https://www.youtube.com/embed/-8vESmS2FCU?si=9pkZDdKQPNsOUAzi"
+                  video
                 }
                 playing
                 loop

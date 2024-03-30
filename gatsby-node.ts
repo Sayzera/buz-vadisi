@@ -36,6 +36,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 text
               }
             }
+            _key
+            children {
+              _key
+              _type
+              marks
+              text
+            }
+            style
+            listItem
+            level
+            _type
+            _rawChildren(resolveReferences: {maxDepth: 10})
           }
           seo_description
           seo_keywords
