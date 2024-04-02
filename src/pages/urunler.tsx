@@ -42,7 +42,7 @@ export default function Products({}: Props) {
       <main>
         <PageHeader title={"Ürünlerimiz"} />
         <div className="mx-auto max-w-7xl py-6 px-0 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 space-y-5 md:space-y-0 md:space-x-10 px-10 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-3  md:space-y-0 gap-4 px-10 md:px-0">
             {
               products?.edges?.map((product, index) => {
                 return (

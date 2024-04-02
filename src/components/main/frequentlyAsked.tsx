@@ -69,7 +69,7 @@ export default function FrequentlyAsked({data}: Props) {
                 <Accordion type="single" collapsible>
                   {data?.sikca_sorulan_sorular?.sss?.edges?.map((item, index) => {
                     return (
-                      <AccordionItem key={item?.node._id} value="item-1">
+                      <AccordionItem key={item?.node._id} value={'item-'+index}>
                       <AccordionTrigger>{item?.node.question}</AccordionTrigger>
                       <AccordionContent className="text-secondary">
                         {item?.node.answer}
