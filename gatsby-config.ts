@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     description: `Ankara Toptan Palet Satışı`,
     twitterUsername: `@karadenizpalet`,
     image:``,
-    siteUrl: `https://karadenizpalet.com/`,
+    siteUrl: `https://karadenizpalet.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
