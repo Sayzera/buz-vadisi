@@ -19,7 +19,7 @@ const config: GatsbyConfig = {
       options: {
         projectId: "n36rdlzw",
         dataset: "production",
-        token:"sk1a6MCUStSr9unzWECGNAaLqK84etorTHQQPbblSIXwK0cHgpBaJXEofM0elSY02gfJWGx83uuzWauNH",
+        token:"skE0LGqxky6vRFJMm0nhgEAc0RFyC81uav94VEmf8MRZiOXoWkLemX0uqC19i816Wu28dc1QM0YKBu3FW",
         graphqlTag: "default",
         watchMode: true,
       },
