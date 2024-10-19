@@ -1,6 +1,5 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import pallet1 from "@/assets/background/pallet-img.png";
 import BasicRating from "../rating";
 import InteractiveList from "../list";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";

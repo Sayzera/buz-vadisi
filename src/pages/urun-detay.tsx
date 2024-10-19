@@ -1,6 +1,6 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import pallet1 from "@/assets/background/pallet-img.png";
+import pallet1 from "@/assets/background/pallet.png";
 import palet2 from "@/assets/background/tahta-palet-video.png";
 import BasicRating from "@/components/rating";
 import InteractiveList from "@/components/list";
